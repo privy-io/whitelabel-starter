@@ -1,6 +1,6 @@
 # Privy Whitelabel Starter
 
-This is a template for integrating whitelabel [**Privy**](https://www.privy.io/) into a [NextJS](https://nextjs.org/) project. Check out the deployed app [here](https://whitelabel-demo.privy.io/)!
+This is a template for integrating whitelabel [**Privy**](https://www.privy.io/) into a [NextJS](https://nextjs.org/) project. Check out the deployed app [here](https://whitelabel.privy.io/)!
 
 This demo uses NextJS's [App Router](https://nextjs.org/docs/app).
 
