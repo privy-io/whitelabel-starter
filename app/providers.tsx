@@ -16,7 +16,6 @@ export default function Providers({children}: {children: React.ReactNode}) {
         embeddedWallets: {
           createOnLogin: 'off', // Anything other than 'off' will not be honored with whitelabel Auth. You must use createWallet from usePrivy()
           showWalletUIs: false,
-          // waitForTransactionConfirmation: false, // Defaults to true. Can only be set to false if wallet confirmation modals are disabled in the dashboard
         },
       }}
     >

@@ -20,8 +20,8 @@ const EthereumWallet: React.FC<EthereumWalletProps> = ({wallet, index}) => {
       value: value,
     };
     try {
-      const res = await sendTransaction(transactionRequest);
-      toast.success(`Transaction sent successfully! ${res}`);
+      const {hash} = await sendTransaction({ transaction: transactionRequest });
+      toast.success(`Transaction sent successfully! ${hash}`);
     } catch (error: any) {
       console.log(error.message);
       toast.error(`Failed to send transaction: ${error?.message}`);
@@ -30,8 +30,8 @@ const EthereumWallet: React.FC<EthereumWalletProps> = ({wallet, index}) => {
 
   const customSignMessage = async () => {
     try {
-      const res = await signMessage('Your messsage here');
-      toast.success(`Message signed successfully! ${res}`);
+      const {signature} = await signMessage({ message: 'Your messsage here' });
+      toast.success(`Message signed successfully! ${signature}`);
     } catch (error: any) {
       toast.error(`Failed to send transaction: ${error?.message}`);
     }

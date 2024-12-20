@@ -16,7 +16,7 @@ const Login = () => {
     loginWithCode: loginWithCodeEmail,
     state: stateEmail,
   } = useLoginWithEmail({
-    onComplete: (user, isNewUser, wasAlreadyAuthenticated, loginMethod) => {
+    onComplete: ({ user, isNewUser, wasAlreadyAuthenticated, loginMethod }) => {
       console.log('🔑 ✅ User successfully logged in with email', {
         user,
         isNewUser,
@@ -52,7 +52,7 @@ const Login = () => {
     loginWithCode: loginWithCodeSms,
     state: stateSms,
   } = useLoginWithSms({
-    onComplete: (user, isNewUser, wasAlreadyAuthenticated, loginMethod) => {
+    onComplete: ({ user, isNewUser, wasAlreadyAuthenticated, loginMethod }) => {
       console.log('🔑 ✅ User successfully logged in with Sms', {
         user,
         isNewUser,
