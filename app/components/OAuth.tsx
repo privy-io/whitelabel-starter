@@ -1,7 +1,5 @@
 'use client';
-import {useEffect} from 'react';
-import {useLoginWithOAuth, usePrivy} from '@privy-io/react-auth';
-import {useRouter} from 'next/navigation';
+import {useLoginWithOAuth, useOAuthTokens} from '@privy-io/react-auth';
 
 const OAuth = () => {
   /**
@@ -11,13 +9,9 @@ const OAuth = () => {
   const {
     // When the OAuth provider redirects back to your app, the `loading`
     // value can be used to show an intermediate state while login completes.
-    loading,
     initOAuth,
   } = useLoginWithOAuth({
-    onOAuthLoginComplete: (...args) => {
-      console.log('OAuthLoginComplete');
-    },
-    onComplete: (user, isNewUser, wasAlreadyAuthenticated, loginMethod) => {
+    onComplete: ({ user, isNewUser, wasAlreadyAuthenticated, loginMethod }) => {
       console.log('🔑 ✅ User successfully logged in with OAuth', {
         user,
         isNewUser,
@@ -29,6 +23,13 @@ const OAuth = () => {
       console.log(error);
     },
   });
+
+  useOAuthTokens({
+    onOAuthTokenGrant: (args) => {
+
+      console.log('OAuth tokens granted', args);
+    }
+  })
   return (
     <div className="grid grid-cols-2 gap-3">
       <button onClick={() => initOAuth({provider: 'google'})} className="btn">
