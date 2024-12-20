@@ -26,7 +26,6 @@ const OAuth = () => {
 
   useOAuthTokens({
     onOAuthTokenGrant: (args) => {
-
       console.log('OAuth tokens granted', args);
     }
   })
