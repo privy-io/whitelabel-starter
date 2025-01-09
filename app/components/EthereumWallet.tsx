@@ -20,7 +20,7 @@ const EthereumWallet: React.FC<EthereumWalletProps> = ({wallet, index}) => {
       value: value,
     };
     try {
-      const {hash} = await sendTransaction({ transaction: transactionRequest });
+      const {hash} = await sendTransaction(transactionRequest);
       toast.success(`Transaction sent successfully! ${hash}`);
     } catch (error: any) {
       console.log(error.message);
