@@ -18,7 +18,7 @@ export default function Wallets() {
   const router = useRouter();
 
   const {ready, authenticated, createWallet: createEthereumWallet, user} = usePrivy();
-  const {wallets: ethereumWallets} = useWallets();
+  const {wallets: ethereumWallets, ready: walletReady} = useWallets();
   const {createWallet: createSolanaWallet, wallets: solanaWallets} = useSolanaWallets();
   const {createGuestAccount} = useGuestAccounts();
   const [showSmartWallet, setShowSmartWallet] = useState(false);
@@ -65,7 +65,7 @@ export default function Wallets() {
     setPendingAction(walletType);
   };
 
-  if (!ready) {
+  if (!ready || !walletReady) {
     return;
   }
 
