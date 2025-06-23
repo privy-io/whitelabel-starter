@@ -14,7 +14,12 @@ export default function Providers({children}: {children: React.ReactNode}) {
         },
         defaultChain: baseSepolia,
         embeddedWallets: {
-          createOnLogin: 'off', // Anything other than 'off' will not be honored with whitelabel Auth. You must use createWallet from usePrivy()
+          ethereum: {
+            createOnLogin: 'off', // Anything other than 'off' will not be honored with whitelabel Auth. You must use createWallet from usePrivy()
+          },
+          solana: {
+            createOnLogin: 'off', // Anything other than 'off' will not be honored with whitelabel Auth. You must use createWallet from usePrivy()
+          },
           showWalletUIs: false,
         },
       }}
