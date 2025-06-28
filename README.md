@@ -23,7 +23,7 @@ git clone https://github.com/privy-io/whitelabel-starter.git
 2. Install the necessary dependencies (including [Privy Auth](https://www.npmjs.com/package/@privy-io/react-auth)) with `yarn`.
 
 ```sh
-npm yarn
+yarn install
 ```
 
 3. Initialize your environment variables by copying the `.env.example` file to an `.env.local` file. Then, in `.env.local`, [paste your Privy App ID from the dashboard](https://docs.privy.io/guide/dashboard/api-keys).
