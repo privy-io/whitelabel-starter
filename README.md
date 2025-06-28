@@ -20,10 +20,10 @@ This demo uses NextJS's [App Router](https://nextjs.org/docs/app).
 git clone https://github.com/privy-io/whitelabel-starter.git
 ```
 
-2. Install the necessary dependencies (including [Privy Auth](https://www.npmjs.com/package/@privy-io/react-auth)) with `npm`.
+2. Install the necessary dependencies (including [Privy Auth](https://www.npmjs.com/package/@privy-io/react-auth)) with `yarn`.
 
 ```sh
-npm i
+yarn install
 ```
 
 3. Initialize your environment variables by copying the `.env.example` file to an `.env.local` file. Then, in `.env.local`, [paste your Privy App ID from the dashboard](https://docs.privy.io/guide/dashboard/api-keys).
@@ -38,7 +38,7 @@ NEXT_PUBLIC_PRIVY_APP_ID=<your-privy-app-id>
 
 ## Building locally
 
-In your project directory, run `npm run dev`. You can now visit http://localhost:3000 to see your app and login with Privy!
+In your project directory, run `yarn dev`. You can now visit http://localhost:3000 to see your app and login with Privy!
 
 ## Check out:
 

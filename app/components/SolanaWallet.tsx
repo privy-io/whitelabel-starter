@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {usePrivy, ConnectedSolanaWallet} from '@privy-io/react-auth';
 import {PublicKey, Transaction, Connection, SystemProgram} from '@solana/web3.js';
 import {toast} from 'react-toastify';
+import {useSignMessage} from '@privy-io/react-auth/solana';
 
 interface SolanaWalletProps {
   wallet: ConnectedSolanaWallet;
@@ -11,7 +12,7 @@ interface SolanaWalletProps {
 const SolanaWallet: React.FC<SolanaWalletProps> = ({wallet, index}) => {
   const [showSignMessage, setShowSignMessage] = useState(false);
   const [showSendTransaction, setShowSendTransaction] = useState(false);
-  const {signMessage} = usePrivy();
+  const {signMessage} = useSignMessage();
 
   const customSolanaSendTransaction = async () => {
     try {
@@ -44,7 +45,7 @@ const SolanaWallet: React.FC<SolanaWalletProps> = ({wallet, index}) => {
 
   const customSignMessage = async () => {
     try {
-      const signature = await signMessage({ message: 'Your message here' });
+      const signature = await signMessage({message: Buffer.from('Your message here')});
       toast.success(`Message signed successfully! ${signature}`);
     } catch (error: any) {
       toast.error(`Failed to sign message: ${error?.message}`);
