@@ -17,6 +17,10 @@ export default function Providers({children}: {children: React.ReactNode}) {
           createOnLogin: 'off', // Anything other than 'off' will not be honored with whitelabel Auth. You must use createWallet from usePrivy()
           showWalletUIs: false,
         },
+        mfa: {
+          // Use custom UIs for MFA
+          noPromptOnMfaRequired: true,
+        },
       }}
     >
       {/* Remove <SmartWalletsProvider if you do not want to use smart wallets */}

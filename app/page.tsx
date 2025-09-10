@@ -1,8 +1,9 @@
 'use client';
 import {usePrivy} from '@privy-io/react-auth';
-import {useRouter} from 'next/navigation';
+
 import Login from './components/Login';
 import Wallets from './components/Wallets';
+import MFA from './components/MFA';
 
 export default function Home() {
   const {ready} = usePrivy();
@@ -44,6 +45,9 @@ export default function Home() {
         </div>
         <div className="w-full md:w-1/2">
           <Wallets />
+        </div>
+        <div className="w-full md:w-1/2">
+          <MFA />
         </div>
       </div>
     </div>
