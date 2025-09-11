@@ -5,6 +5,7 @@ import OAuth from './OAuth';
 import Passkey from './Passkey';
 import SIWE from './SIWE';
 import TelegramLogin from './TelegramLogin';
+import SIWS from './SIWS';
 
 const Login = () => {
   const {createGuestAccount} = useGuestAccounts();
@@ -180,6 +181,8 @@ const Login = () => {
         <Passkey />
         <h2 className="text-xl font-bold mb-4 text-left mt-2">SIWE</h2>
         <SIWE />
+        <h2 className="text-xl font-bold mb-4 text-left mt-2">SIWS</h2>
+        <SIWS />
         <h2 className="text-xl font-bold mb-4 text-left mt-2">Telegram</h2>
         <TelegramLogin />
       </div>

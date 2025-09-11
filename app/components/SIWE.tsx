@@ -25,7 +25,7 @@ const SIWE = () => {
   };
   return (
     <div className="grid grid-cols-2 gap-3">
-      <button onClick={() => connectWallet()} className="btn">
+      <button onClick={() => connectWallet({walletChainType: 'ethereum-only'})} className="btn">
         <div className="btn-text">Connect Wallet</div>
       </button>
       <button onClick={() => handleLoginWithSiwe()} className="btn">

@@ -3908,7 +3908,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bs58@npm:6.0.0":
+"bs58@npm:6.0.0, bs58@npm:^6.0.0":
   version: 6.0.0
   resolution: "bs58@npm:6.0.0"
   dependencies:
@@ -9300,6 +9300,7 @@ __metadata:
     "@types/node": "npm:^20"
     "@types/react": "npm:^18"
     "@types/react-dom": "npm:^18"
+    bs58: "npm:^6.0.0"
     eslint: "npm:^8.57.1"
     eslint-config-next: "npm:15.0.1"
     eslint-config-prettier: "npm:^9.1.0"
